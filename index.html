@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Advanced Frontend test / Multi-step Popup Survey">
+    <meta name="author" content="Pajic Sladjana">   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quantox Technology</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+      function skillChanged() {
+      var skill = document.querySelector('input[name = "skill"]:checked').value;      
+      document.getElementById("skills").value = skill;
+      }   
+    </script>
+  </head>
+  <body>
+    <div id="app" class="modal">    
+        <div id="formData">
+          <label for="firstName">First Name</label>
+          <input type="text" name="fName" value="">
+          <label for="lastName">Last Name</label>
+          <input type="text" name="lName" value="">
+          <label for="title">Title</label>
+          <input type="text" name="title" value="">
+          <label for="email">Email</label>
+          <input type="email" name="email" value="" id="email">
+          <p id="reg"></p>
+          <label for="skills">Pick your skills level</label>
+          <ul class="radioList">
+            <li><input type="radio" name="skill" value="Junior" id="Junior" onchange="skillChanged()"><label for="Junior"></label></li>
+            <li><input type="radio" name="skill" value="Intermediate" id="Intermediate" onchange="skillChanged()"><label for="Intermediate"></label></li> 
+            <li><input type="radio" name="skill" value="Senior" id="Senior" onchange="skillChanged()"><label for="Senior"></label></li> 
+          </ul>  
+          <input type="text" id="skills" value="">
+          <button id="ajaxButton" class="agreeButton">NEXT</button>     
+        </div>       
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>
